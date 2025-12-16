@@ -1,38 +1,29 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import ShinnyMascot from "../components/ShinnyMascot";
 
 const GameScreen = () => {
   const location = useLocation();
   const difficulty = location.state?.difficulty || "Unknown";
 
   return (
-    <div
-      style={{
-        textAlign: "center",
-        marginTop: "2rem",
-        padding: "1rem",
-        fontFamily: "Arial, sans-serif",
-        background: "linear-gradient(135deg, #282c34, #3a3f47)",
-        color: "#fff",
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <h1
-        style={{
-          fontSize: "3rem",
-          textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
-        }}
-      >
-        Game Page
-      </h1>
-      <p style={{ fontSize: "1.5rem", color: "#dcdcdc" }}>
-        Selected Difficulty:{" "}
-        <span style={{ color: "#fff", fontWeight: "bold" }}>{difficulty}</span>
-      </p>
+    <div className="page-center">
+      <div className="cartoon-theme">
+        <div className="hero">
+          <div className="mascot-wrap">
+            <ShinnyMascot />
+          </div>
+
+          <div className="startContent">
+            <h1 className="title">Game Screen</h1>
+            <p className="subtitle">Selected difficulty: <strong>{difficulty}</strong></p>
+            <div style={{marginTop:12}}>
+              <button className="button soft">Resume</button>
+              <button className="button soft" style={{marginLeft:10}}>Restart</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

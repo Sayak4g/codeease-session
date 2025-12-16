@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fredoka:wght@400;600;700;800&family=Poppins:wght@600;700;800&display=swap');
+
+:root{
+  --bg-1: #e3f5ff;
+  --bg-2: #b3e5fc;
+  --accent-1: #0196d6; /* doraemon blue */
+  --accent-2: #ffffff; /* white */
+  --accent-3: #0076b3; /* darker blue */
+  --doraui-pink: #ff1493; /* vibrant pink */
+  --doraui-blue: #0075ff; /* vibrant blue */
+  --text-1: #1a2332;
+}
+
+html,body,#root{height:100%;}
+body{
+  margin:0;
+  font-family: 'Fredoka', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: linear-gradient(135deg,var(--bg-1),var(--bg-2));
+  color:var(--text-1);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  position:relative;
+  overflow-x:hidden;
+}
+body::before{
+  content:'';
+  position:fixed;
+  top:-20%;
+  right:-15%;
+  width:500px;
+  height:500px;
+  background:radial-gradient(circle at 30% 30%, #0196d6, transparent);
+  border-radius:50%;
+  filter:blur(80px);
+  opacity:0.12;
+  pointer-events:none;
+  z-index:-1;
+}
+body::after{
+  content:'';
+  position:fixed;
+  bottom:-10%;
+  left:-10%;
+  width:400px;
+  height:400px;
+  background:radial-gradient(circle at 70% 70%, #0196d6, transparent);
+  border-radius:50%;
+  filter:blur(70px);
+  opacity:0.1;
+  pointer-events:none;
+  z-index:-1;
+}
+
+.cartoon-theme .hero{
+  display:flex;
+  align-items:center;
+  gap:1.2rem;
+  padding:1.4rem 1.6rem;
+  border-radius:20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.88));
+  box-shadow: 0 12px 32px rgba(1,150,214,0.08), inset 0 1px 0 rgba(255,255,255,0.8);
+  border: 2px solid rgba(1,150,214,0.1);
+}
+
+.title{font-family:'Fredoka One', 'Fredoka', sans-serif; font-size:2.8rem;margin:0;color:#000;line-height:1.1;letter-spacing:0.5px}
+.subtitle{font-size:1.1rem;margin:0 0 1rem 0;color:#000;font-weight:600}
+
+.button{border-radius:10px;padding:1rem 2.4rem;border:none;font-weight:800;cursor:pointer;font-family:'Poppins','Fredoka',sans-serif;font-size:1.05rem;transition:all 0.28s cubic-bezier(0.25,0.46,0.45,0.94);position:relative;overflow:visible;letter-spacing:0.3px;text-transform:uppercase}
+.button.soft{background:linear-gradient(135deg,#0196d6 0%,#ffffff 100%);color:#000;box-shadow:0 14px 36px rgba(1,150,214,0.28),inset 0 1px 1px rgba(255,255,255,0.6);border:2px solid #0196d6}
+.button.soft::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(255,255,255,0.4) 0%,transparent 60%);pointer-events:none;opacity:0.8}
+.button.soft::after{content:'';position:absolute;top:-18px;right:-8px;width:56px;height:56px;background-image:url('https://cdn.pixabay.com/photo/2016/12/29/11/45/doraemon-1936234_1280.png');background-size:contain;background-repeat:no-repeat;background-position:center;background-color:transparent;filter:drop-shadow(0 3px 8px rgba(0,0,0,0.25));animation:bell-swing 1.5s ease-in-out infinite;transform-origin:center -4px}
+.button.soft-secondary{background:linear-gradient(135deg,#ffffff 0%,#0196d6 100%);color:#000;box-shadow:0 14px 36px rgba(1,150,214,0.25);border:2px solid #ffffff}
+.button.soft-secondary::after{content:'';position:absolute;top:-18px;right:-8px;width:56px;height:56px;background-image:url('https://cdn.pixabay.com/photo/2016/12/29/11/45/doraemon-1936234_1280.png');background-size:contain;background-repeat:no-repeat;background-position:center;background-color:transparent;filter:drop-shadow(0 3px 8px rgba(0,0,0,0.25));animation:bell-swing 1.5s ease-in-out infinite;transform-origin:center -4px}
+.button.soft:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(1,150,214,0.35),inset 0 1px 1px rgba(255,255,255,0.7)}
+.button.soft:active{transform:translateY(-1px);box-shadow:0 10px 24px rgba(1,150,214,0.25)}
+
+/* page containers */
+.page-center{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1.25rem}
+
+/* small helpers */
+.mascot-wrap{flex:0 0 220px}
+
+
+@media (max-width:720px){
+  .cartoon-theme .hero{flex-direction:column}
+  .title{font-size:2rem;text-align:center}
+  .subtitle{text-align:center}
+}

@@ -1,53 +1,66 @@
 .container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #282c34, #3a3f47);
-  color: #fff;
-  font-family: Arial, sans-serif;
-  padding: 1rem;
+  min-height: 100vh;
+  padding: 1.25rem;
   box-sizing: border-box;
 }
 
 .title {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 2.8rem;
+  margin-bottom: 0.2rem;
+  color: var(--text-1);
 }
-
 .subtitle {
-  font-size: 1.75rem;
-  margin-bottom: 2.5rem;
-  color: #dcdcdc;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  color: #7b5b87;
 }
 
 .buttonContainer {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .button {
-  padding: 0.75rem 2rem;
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #fff;
-  background-color: #007bff;
+  padding: 0.8rem 1.8rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-1);
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.button:hover { transform: translateY(-4px) scale(1.02); }
+.button:active { transform: translateY(0) scale(0.99); }
+
+.cartoon-theme .hero {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.8));
+  padding: 1.25rem 1.6rem;
+  border-radius: 14px;
+  box-shadow: 0 14px 36px rgba(60,40,80,0.06);
 }
 
-.button:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+.startContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.button:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+.button.soft {
+  background: linear-gradient(90deg,var(--accent-1),var(--accent-2));
 }
+.button.secondary {
+  background: linear-gradient(90deg,var(--accent-3),#cfeeff);
+}
+
+@media (max-width: 720px) {
+  .cartoon-theme .hero { flex-direction: column; align-items: center; }
+  .startContent { align-items: center; text-align: center; }
+}
+

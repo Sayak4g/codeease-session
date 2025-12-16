@@ -1,0 +1,20 @@
+.mascot-wrap {
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mascot {
+  width: 160px;
+  height: auto;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.12));
+  transform-origin: center;
+  animation: mascot-bob 3.8s ease-in-out infinite;
+}
+
+@keyframes mascot-bob {
+  0% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-6px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(-1deg); }
+}

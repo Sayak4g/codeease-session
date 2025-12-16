@@ -1,0 +1,19 @@
+.shinny-wrap {
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shinny,
+.doraemon-img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 20px rgba(1,150,214,0.2));
+  animation: shinny-bounce 3.6s ease-in-out infinite;
+}
+@keyframes shinny-bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
