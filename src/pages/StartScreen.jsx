@@ -19,7 +19,7 @@ const StartScreen = () => {
 
         <div className="startContent">
           <h1 className="title">Welcome to the Game!</h1>
-          <p className="subtitle">Pick a difficulty and have fun!</p>
+          <p className="subtitle">Select your difficulty level to start:</p>
 
           <div className="buttonContainer">
             <button
