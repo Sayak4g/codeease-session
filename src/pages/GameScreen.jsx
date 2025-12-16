@@ -17,10 +17,7 @@ const GameScreen = () => {
           <div className="startContent">
             <h1 className="title">Game Screen</h1>
             <p className="subtitle">Selected difficulty: <strong>{difficulty}</strong></p>
-            <div style={{marginTop:12}}>
-              <button className="button soft">Resume</button>
-              <button className="button soft" style={{marginLeft:10}}>Restart</button>
-            </div>
+            {/* Only show the selected difficulty */}
           </div>
         </div>
       </div>
